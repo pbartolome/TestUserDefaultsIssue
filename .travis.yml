@@ -3,10 +3,13 @@ osx_image: xcode8
 
 env:
   matrix:
+  - TEST_SDK='iphonesimulator' TEST_PLATFORM='iOS Simulator' TEST_OS=10.0 TEST_DEVICE_NAME='iPhone 6'
+  - TEST_SDK='iphonesimulator' TEST_PLATFORM='iOS Simulator' TEST_OS=10.0 TEST_DEVICE_NAME='iPhone 6s'
+  - TEST_SDK='iphonesimulator' TEST_PLATFORM='iOS Simulator' TEST_OS=10.0 TEST_DEVICE_NAME='iPhone 6 Plus'
+  - TEST_SDK='iphonesimulator' TEST_PLATFORM='iOS Simulator' TEST_OS=10.0 TEST_DEVICE_NAME='iPhone 6s Plus'
   - TEST_SDK='iphonesimulator' TEST_PLATFORM='iOS Simulator' TEST_OS=10.0 TEST_DEVICE_NAME='iPhone 7'
-  - TEST_SDK='iphonesimulator' TEST_PLATFORM='iOS Simulator' TEST_OS=10.0 TEST_DEVICE_NAME='iPhone 6'
-  - TEST_SDK='iphonesimulator' TEST_PLATFORM='iOS Simulator' TEST_OS=10.0 TEST_DEVICE_NAME='iPhone 6'
+  - TEST_SDK='iphonesimulator' TEST_PLATFORM='iOS Simulator' TEST_OS=10.0 TEST_DEVICE_NAME='iPhone 7 Plus'
 
 script:
-- xcodebuild test -project 'UserDefaultsNil.xcodeproj' -scheme 'UserDefaultsNil' -sdk $TEST_SDK -destination "platform=$TEST_PLATFORM,name=$TEST_DEVICE_NAME,OS=$TEST_OS"
+- xcodebuild test -project 'UserDefaultsNil.xcodeproj' -scheme 'UserDefaultsNil' -sdk $TEST_SDK -destination platform=$TEST_PLATFORM,name=$TEST_DEVICE_NAME,OS=$TEST_OS
 
