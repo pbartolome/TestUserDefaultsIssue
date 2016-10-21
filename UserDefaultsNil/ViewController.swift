@@ -22,7 +22,7 @@ class ViewController: UIViewController {
             label.text = "First Install"
         } else {
             view.backgroundColor = UIColor.green
-            label.text = "ok!"
+            label.text = "OK!"
         }
     }
 

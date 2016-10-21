@@ -26,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func isFirstInstall() -> Bool {
-        return UserDefaults.standard.string(forKey: "firstInstall") != nil
+        let fisrtInstall = UserDefaults.standard.string(forKey: "firstInstall")
+        return fisrtInstall == nil
     }
   
 
