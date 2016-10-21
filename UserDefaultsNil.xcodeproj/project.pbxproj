@@ -47,6 +47,7 @@
 		D5157DC41DB93F23008E3670 /* UserDefaultsNilUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserDefaultsNilUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5157DC81DB93F23008E3670 /* UserDefaultsNilUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsNilUITests.swift; sourceTree = "<group>"; };
 		D5157DCA1DB93F23008E3670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5462E6B1DBAC40900B52814 /* UserDefaultsNil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UserDefaultsNil.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		D5157DA71DB93F23008E3670 /* UserDefaultsNil */ = {
 			isa = PBXGroup;
 			children = (
+				D5462E6B1DBAC40900B52814 /* UserDefaultsNil.entitlements */,
 				D5157DA81DB93F23008E3670 /* AppDelegate.swift */,
 				D5157DAA1DB93F23008E3670 /* ViewController.swift */,
 				D5157DAC1DB93F23008E3670 /* Main.storyboard */,
@@ -193,7 +195,13 @@
 				TargetAttributes = {
 					D5157DA41DB93F23008E3670 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 5823F338FE;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					D5157DB81DB93F23008E3670 = {
 						CreatedOnToolsVersion = 8.0;
@@ -412,6 +420,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = UserDefaultsNil/UserDefaultsNil.entitlements;
+				DEVELOPMENT_TEAM = 5823F338FE;
 				INFOPLIST_FILE = UserDefaultsNil/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pb.radar.UserDefaultsNil;
@@ -424,6 +434,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = UserDefaultsNil/UserDefaultsNil.entitlements;
+				DEVELOPMENT_TEAM = 5823F338FE;
 				INFOPLIST_FILE = UserDefaultsNil/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pb.radar.UserDefaultsNil;
@@ -505,6 +517,7 @@
 				D5157DCF1DB93F23008E3670 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5157DD01DB93F23008E3670 /* Build configuration list for PBXNativeTarget "UserDefaultsNilTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +526,7 @@
 				D5157DD21DB93F23008E3670 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5157DD31DB93F23008E3670 /* Build configuration list for PBXNativeTarget "UserDefaultsNilUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +535,7 @@
 				D5157DD51DB93F23008E3670 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

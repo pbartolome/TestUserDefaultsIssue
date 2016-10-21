@@ -8,22 +8,46 @@
 
 import UIKit
 
+enum StatusType {
+    case noError
+    case firstInstall
+    case userDefaultsError
+    case keychainError(OSStatus)
+    
+    var value : String {
+        switch self {
+        case .noError:
+            return "OK!"
+        case .firstInstall:
+            return "FIRST INSTALL"
+        case .userDefaultsError:
+            return "USER DEFAULTS ERROR"
+        case .keychainError(let status):
+            return "KEYCHAIN ERROR STATUS \(status)"
+        }
+    }
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var label : UILabel!
-    var isFirstInstall : Bool = false
+    
+    var status : StatusType = .noError
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.text = "Test"
         
-        if isFirstInstall {
-            view.backgroundColor = UIColor.red
-            label.text = "First Install"
-        } else {
+        switch status {
+        case .noError:
             view.backgroundColor = UIColor.green
-            label.text = "OK!"
+        case .firstInstall:
+            view.backgroundColor = UIColor.yellow
+        default:
+            view.backgroundColor = UIColor.red
         }
+        
+        label.text = status.value
+        label.accessibilityIdentifier = "statusLabel"
     }
 
 }

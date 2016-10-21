@@ -9,25 +9,24 @@
 import XCTest
 
 class UserDefaultsNilUITests: XCTestCase {
-        
-    override func setUp() {
-        super.setUp()
-        
-    }
     
     func testLoopLaunchApp() {
         var iteration = 0
         while true {
+            //prevent xcode from killing the ui test because the app is not ready
+            //"Busy ("Application is installing or uninstalling, and cannot be launched")"
+            sleep(2)
+            
             XCUIApplication().launch()
             let app = XCUIApplication()
-            let oklabelExists = app.staticTexts["OK!"].exists
             
-            if iteration == 0 && !oklabelExists {
+            if iteration == 0 && app.staticTexts["FIRST INSTALL"].exists {
                 print("First iteration, correct first install detected")
-            } else if oklabelExists {
+            } else if app.staticTexts["OK!"].exists {
                 print("Correct not first install detected in iteration \(iteration)")
             } else {
-                XCTFail("Error: User defaults is empty in iteration \(iteration)")
+                let error = app.staticTexts.element(matching: .any, identifier: "statusLabel").label
+                XCTFail("Error: \(error) in iteration \(iteration)")
             }
             
             iteration += 1
