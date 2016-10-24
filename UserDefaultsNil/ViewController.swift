@@ -12,6 +12,7 @@ enum StatusType {
     case noError
     case firstInstall
     case userDefaultsError
+    case fileError
     case keychainError(OSStatus)
     
     var value : String {
@@ -20,6 +21,8 @@ enum StatusType {
             return "OK!"
         case .firstInstall:
             return "FIRST INSTALL"
+        case .fileError:
+            return "FILE ERROR"
         case .userDefaultsError:
             return "USER DEFAULTS ERROR"
         case .keychainError(let status):
@@ -32,22 +35,32 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var label : UILabel!
     
-    var status : StatusType = .noError
+    //Use an array in case there are more than one failure
+    var status : [StatusType] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        switch status {
-        case .noError:
-            view.backgroundColor = UIColor.green
-        case .firstInstall:
-            view.backgroundColor = UIColor.yellow
-        default:
-            view.backgroundColor = UIColor.red
-        }
-        
-        label.text = status.value
         label.accessibilityIdentifier = "statusLabel"
+        
+        if status.count > 0 {
+            for error in status {
+                label.text = error.value + "\n" + label.text!
+            }
+            
+            switch status.first! {
+            case .firstInstall:
+                view.backgroundColor = UIColor.yellow
+            default:
+                view.backgroundColor = UIColor.red
+            }
+            
+        } else {
+            label.text = StatusType.noError.value
+            view.backgroundColor = UIColor.green
+        }
+
+        
+
     }
 
 }

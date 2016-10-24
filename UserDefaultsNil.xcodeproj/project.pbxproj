@@ -210,6 +210,7 @@
 					};
 					D5157DC31DB93F23008E3670 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 5823F338FE;
 						ProvisioningStyle = Automatic;
 						TestTargetID = D5157DA41DB93F23008E3670;
 					};
@@ -476,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 5823F338FE;
 				INFOPLIST_FILE = UserDefaultsNilUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pb.radar.UserDefaultsNilUITests;
@@ -489,6 +491,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 5823F338FE;
 				INFOPLIST_FILE = UserDefaultsNilUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pb.radar.UserDefaultsNilUITests;
